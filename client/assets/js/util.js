@@ -18,5 +18,5 @@ function successAlert(message) {
 
 const instance = axios.create({
   baseURL: 'http://localhost:3000',
-  headers: { 'X-Custom-Header': 'foobar' },
+  headers: { token: localStorage.getItem('token') ?? '' },
 });

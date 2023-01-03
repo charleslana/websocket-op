@@ -13,7 +13,7 @@
   </head>
   <body>
     <main class="form-signin text-center">
-      <form>
+      <form id="loginForm" class="was-validated">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="72"
@@ -39,7 +39,9 @@
             class="form-control"
             id="username"
             placeholder="Usuário"
+            required
           />
+          <div class="invalid-feedback">Preencha o usuário.</div>
           <label for="username">Usuário</label>
         </div>
         <div class="form-floating">
@@ -48,7 +50,9 @@
             class="form-control"
             id="password"
             placeholder="Senha"
+            required
           />
+          <div class="invalid-feedback">Preencha a senha.</div>
           <label for="password">Senha</label>
         </div>
         <div class="checkbox mb-3 mt-3">
@@ -58,6 +62,12 @@
           </label>
         </div>
         <button class="w-100 btn btn-lg btn-primary" type="submit" id="login">
+          <span
+            class="spinner-border spinner-border-sm d-none"
+            role="status"
+            aria-hidden="true"
+            id="loginSpan"
+          ></span>
           Entrar
         </button>
       </form>
@@ -68,6 +78,9 @@
       >
     </main>
     <script src="assets/lib/bootstrap-5.0.2/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/lib/sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="assets/lib/axios/axios.min.js"></script>
+    <script src="assets/js/util.js"></script>
     <script src="assets/js/index.js"></script>
   </body>
 </html>

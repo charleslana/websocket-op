@@ -20,8 +20,17 @@ userRouter.get('/', async (_request, response) => {
 });
 
 userRouter.post('/login', async (request, response) => {
-  await userLogin(request.body.username, request.body.password);
-  response.json('ok');
+  try {
+    const token = await userLogin(request.body.username, request.body.password);
+    response.json({
+      message: 'Usuário logado com sucesso',
+      token: token,
+    });
+  } catch (error) {
+    response.status(400).json({
+      message: error.message,
+    });
+  }
 });
 
 module.exports = userRouter;

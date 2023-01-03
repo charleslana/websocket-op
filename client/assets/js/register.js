@@ -1,5 +1,6 @@
-document.getElementById('loginForm').addEventListener('submit', e => {
+document.getElementById('registerForm').addEventListener('submit', e => {
   e.preventDefault();
+  loadingButton();
   instance
     .post('/user', {
       username: document.getElementById('username').value,
@@ -16,5 +17,18 @@ document.getElementById('loginForm').addEventListener('submit', e => {
         return;
       }
       errorAlert(error.message);
+    })
+    .finally(() => {
+      removeLoading();
     });
 });
+
+function loadingButton() {
+  document.getElementById('register').setAttribute('disabled', true);
+  document.getElementById('registerSpan').classList.toggle('d-none');
+}
+
+function removeLoading() {
+  document.getElementById('register').removeAttribute('disabled');
+  document.getElementById('registerSpan').classList.toggle('d-none');
+}

@@ -13,7 +13,7 @@
   </head>
   <body>
     <main class="form-signin text-center">
-      <form id="loginForm">
+      <form id="registerForm" class="was-validated">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="72"
@@ -34,7 +34,9 @@
             class="form-control"
             id="username"
             placeholder="Usuário"
+            required
           />
+          <div class="invalid-feedback">Preencha o usuário.</div>
           <label for="username">Usuário</label>
         </div>
         <div class="form-floating">
@@ -43,7 +45,9 @@
             class="form-control"
             id="password"
             placeholder="Senha"
+            required
           />
+          <div class="invalid-feedback">Preencha a senha.</div>
           <label for="password">Senha</label>
         </div>
         <div class="form-floating">
@@ -52,7 +56,9 @@
             class="form-control"
             id="passwordConfirmation"
             placeholder="Confirme a senha"
+            required
           />
+          <div class="invalid-feedback">Preencha a confirmação da senha.</div>
           <label for="passwordConfirmation">Confirme a senha</label>
         </div>
         <button
@@ -60,6 +66,12 @@
           type="submit"
           id="register"
         >
+          <span
+            class="spinner-border spinner-border-sm d-none"
+            role="status"
+            aria-hidden="true"
+            id="registerSpan"
+          ></span>
           Cadastrar
         </button>
       </form>

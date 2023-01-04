@@ -33,3 +33,7 @@ instance.interceptors.response.use(
     return Promise.reject(error);
   }
 );
+
+function numberFormatter(number) {
+  return number.toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
+}

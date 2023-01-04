@@ -1,9 +1,9 @@
 const characters = require('../data/character.data');
 
-const characterGet = async () => {
+const getCharacter = async () => {
   return characters;
 };
 
 module.exports = {
-  characterGet,
+  getCharacter,
 };

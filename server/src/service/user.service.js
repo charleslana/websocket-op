@@ -1,7 +1,7 @@
 const users = require('../data/user.data');
 
-const userCreate = async (username, password) => {
-  if (loginExist(username)) {
+const createUser = async (username, password) => {
+  if (existLogin(username)) {
     throw new Error('Já existe o login');
   }
   const id = users[users.length - 1].id;
@@ -10,14 +10,25 @@ const userCreate = async (username, password) => {
     username: username,
     password: password,
     token: null,
+    avatar: '1',
+    berry: 500000,
+    gold: 500000,
+    minExp: 0,
+    maxExp: 1000,
+    level: 1,
   });
 };
 
-const userGet = async () => {
-  return users;
+const getUser = async () => {
+  const userList = users.map(object => ({ ...object }));
+  userList.forEach(u => {
+    delete u['password'];
+    delete u['token'];
+  });
+  return userList;
 };
 
-const userLogin = async (username, password) => {
+const loginUser = async (username, password) => {
   const user = users.find(u => {
     return u.username === username && u.password === password;
   });
@@ -25,12 +36,26 @@ const userLogin = async (username, password) => {
     throw new Error('Credenciais inválidas');
   }
   const userIndex = users.findIndex(u => u.id == user.id);
-  const token = randomString(10);
+  const token = randomString(100);
   users[userIndex].token = token;
-  return { username, token };
+  const avatar = user.avatar;
+  return { username, token, avatar };
 };
 
-const loginExist = username => {
+const getLoggedUser = async token => {
+  const user = users.find(u => {
+    return token !== null && token !== '' && u.token === token;
+  });
+  if (!user) {
+    throw new Error('Não autorizado');
+  }
+  const userLogged = { ...user };
+  delete userLogged['password'];
+  delete userLogged['token'];
+  return userLogged;
+};
+
+const existLogin = username => {
   const user = users.find(u => {
     return u.username === username;
   });
@@ -50,7 +75,8 @@ const randomString = length => {
 };
 
 module.exports = {
-  userCreate,
-  userGet,
-  userLogin,
+  createUser,
+  getUser,
+  loginUser,
+  getLoggedUser,
 };

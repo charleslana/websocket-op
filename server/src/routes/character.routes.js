@@ -1,9 +1,9 @@
 const express = require('express');
-const { characterGet } = require('../service/character.service');
+const { getCharacter } = require('../service/character.service');
 const characterRouter = express.Router();
 
 characterRouter.get('/', async (_request, response) => {
-  response.json(await characterGet());
+  response.json(await getCharacter());
 });
 
 module.exports = characterRouter;

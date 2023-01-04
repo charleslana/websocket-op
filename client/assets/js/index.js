@@ -42,6 +42,7 @@ function redirectAlert(data) {
     if (result.isConfirmed) {
       localStorage.setItem('token', data.token);
       localStorage.setItem('user', data.username);
+      localStorage.setItem('avatar', data.avatar);
       window.location.href = 'home.html';
     }
   });

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="assets/lib/bootstrap-5.0.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/lib/bootstrap-icons-1.10.3/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="assets/css/home.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+          <div
+            class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100"
+          >
+            <a
+              href="/"
+              class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+            >
+              <span class="fs-5 d-none d-sm-inline">Menu</span>
+            </a>
+            <ul
+              class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+              id="menu"
+            >
+              <li class="nav-item">
+                <a href="home.html" class="nav-link align-middle px-0">
+                  <i class="fs-4 bi-house"></i>
+                  <span class="ms-1 d-none d-sm-inline">Home</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#submenu1"
+                  data-bs-toggle="collapse"
+                  class="nav-link px-0 align-middle"
+                >
+                  <i class="fs-4 bi-grid"></i>
+                  <span class="ms-1 d-none d-sm-inline">Menu2</span>
+                </a>
+                <ul
+                  class="collapse show nav flex-column ms-1"
+                  id="submenu1"
+                  data-bs-parent="#menu"
+                >
+                  <li class="w-100">
+                    <a href="#" class="nav-link px-0">
+                      <span class="d-none d-sm-inline">Sub item</span> 1
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" class="nav-link px-0">
+                      <span class="d-none d-sm-inline">Sub item</span> 2
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#" class="nav-link px-0 align-middle">
+                  <i class="fs-4 bi-grid"></i>
+                  <span class="ms-1 d-none d-sm-inline">Cartas</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="#submenu2"
+                  data-bs-toggle="collapse"
+                  class="nav-link px-0 align-middle"
+                >
+                  <i class="fs-4 bi-grid"></i>
+                  <span class="ms-1 d-none d-sm-inline">Menu 4</span></a
+                >
+                <ul
+                  class="collapse nav flex-column ms-1"
+                  id="submenu2"
+                  data-bs-parent="#menu"
+                >
+                  <li class="w-100">
+                    <a href="#" class="nav-link px-0">
+                      <span class="d-none d-sm-inline">Sub item</span> 1</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="nav-link px-0">
+                      <span class="d-none d-sm-inline">Sub item</span> 2</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="#submenu3"
+                  data-bs-toggle="collapse"
+                  class="nav-link px-0 align-middle"
+                >
+                  <i class="fs-4 bi-grid"></i>
+                  <span class="ms-1 d-none d-sm-inline">Menu 5</span>
+                </a>
+                <ul
+                  class="collapse nav flex-column ms-1"
+                  id="submenu3"
+                  data-bs-parent="#menu"
+                >
+                  <li class="w-100">
+                    <a href="#" class="nav-link px-0">
+                      <span class="d-none d-sm-inline">Sub item</span> 1</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="nav-link px-0">
+                      <span class="d-none d-sm-inline">Sub item</span> 2</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="nav-link px-0">
+                      <span class="d-none d-sm-inline">Sub item</span> 3</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="nav-link px-0">
+                      <span class="d-none d-sm-inline">Sub item</span> 4</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#" class="nav-link px-0 align-middle">
+                  <i class="fs-4 bi-people"></i>
+                  <span class="ms-1 d-none d-sm-inline">Menu 6</span>
+                </a>
+              </li>
+            </ul>
+            <hr />
+            <div class="dropdown pb-4">
+              <a
+                href="#"
+                class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                id="dropdownUser1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  src="assets/images/avatars/1.png"
+                  alt="image"
+                  width="30"
+                  height="30"
+                  class="rounded-circle"
+                />
+                <span class="d-none d-sm-inline mx-1" id="username">user</span>
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-dark text-small shadow"
+                aria-labelledby="dropdownUser1"
+              >
+                <li><a class="dropdown-item" href="#">Menu 1</a></li>
+                <li><a class="dropdown-item" href="#">Menu 2</a></li>
+                <li><a class="dropdown-item" href="#">Menu 3</a></li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#" id="logout">Sair</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col py-3">
+          <div class="container px-4 py-5" id="custom-cards">
+            <h2 class="pb-2 border-bottom">Suas cartas</h2>
+
+            <div
+              class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5"
+            >
+              <div class="col">
+                <div
+                  class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                  style="
+                    background-image: linear-gradient(
+                        rgba(0, 0, 0, 0.5),
+                        rgba(0, 0, 0, 0.5)
+                      ),
+                      url('assets/images/characters/1.png');
+                  "
+                >
+                  <div
+                    class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1"
+                  >
+                    <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+                      Crocodile
+                    </h2>
+                    <ul class="d-flex list-unstyled mt-auto">
+                      <li class="me-auto">
+                        <img
+                          src="assets/images/avatars/1.png"
+                          alt="Image"
+                          width="32"
+                          height="32"
+                          class="rounded-circle border border-white"
+                        />
+                      </li>
+                      <li class="d-flex align-items-center me-3">
+                        <i class="bi bi-geo-fill me-2"></i>
+                        <small>Earth</small>
+                      </li>
+                      <li class="d-flex align-items-center">
+                        <i class="bi bi-calendar3 me-2"></i>
+                        <small>3d</small>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div
+                  class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                  style="
+                    background-image: linear-gradient(
+                        rgba(0, 0, 0, 0.5),
+                        rgba(0, 0, 0, 0.5)
+                      ),
+                      url('assets/images/characters/2.png');
+                  "
+                >
+                  <div
+                    class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1"
+                  >
+                    <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Ohm</h2>
+                    <ul class="d-flex list-unstyled mt-auto">
+                      <li class="me-auto">
+                        <img
+                          src="assets/images/avatars/1.png"
+                          alt="Image"
+                          width="32"
+                          height="32"
+                          class="rounded-circle border border-white"
+                        />
+                      </li>
+                      <li class="d-flex align-items-center me-3">
+                        <i class="bi bi-geo-fill me-2"></i>
+                        <small>Earth</small>
+                      </li>
+                      <li class="d-flex align-items-center">
+                        <i class="bi bi-calendar3 me-2"></i>
+                        <small>3d</small>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div
+                  class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                  style="
+                    background-image: linear-gradient(
+                        rgba(0, 0, 0, 0.5),
+                        rgba(0, 0, 0, 0.5)
+                      ),
+                      url('assets/images/characters/3.png');
+                  "
+                >
+                  <div
+                    class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1"
+                  >
+                    <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Enel</h2>
+                    <ul class="d-flex list-unstyled mt-auto">
+                      <li class="me-auto">
+                        <img
+                          src="assets/images/avatars/1.png"
+                          alt="Image"
+                          width="32"
+                          height="32"
+                          class="rounded-circle border border-white"
+                        />
+                      </li>
+                      <li class="d-flex align-items-center me-3">
+                        <i class="bi bi-geo-fill me-2"></i>
+                        <small>Earth</small>
+                      </li>
+                      <li class="d-flex align-items-center">
+                        <i class="bi bi-calendar3 me-2"></i>
+                        <small>3d</small>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/lib/bootstrap-5.0.2/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/lib/sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="assets/lib/axios/axios.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/sidebar.js"></script>
+  </body>
+</html>

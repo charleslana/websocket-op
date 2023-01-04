@@ -21,10 +21,14 @@ userRouter.get('/', async (_request, response) => {
 
 userRouter.post('/login', async (request, response) => {
   try {
-    const token = await userLogin(request.body.username, request.body.password);
+    const { username, token } = await userLogin(
+      request.body.username,
+      request.body.password
+    );
     response.json({
       message: 'Usuário logado com sucesso',
       token: token,
+      username: username,
     });
   } catch (error) {
     response.status(400).json({

@@ -27,7 +27,7 @@ const userLogin = async (username, password) => {
   const userIndex = users.findIndex(u => u.id == user.id);
   const token = randomString(10);
   users[userIndex].token = token;
-  return token;
+  return { username, token };
 };
 
 const loginExist = username => {

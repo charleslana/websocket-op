@@ -7,7 +7,7 @@ document.getElementById('loginForm').addEventListener('submit', e => {
       password: document.getElementById('password').value,
     })
     .then(response => {
-      redirectAlert(response.data.message, response.data.token);
+      redirectAlert(response.data);
     })
     .catch(error => {
       if (error.response) {
@@ -31,17 +31,18 @@ function removeLoading() {
   document.getElementById('loginSpan').classList.toggle('d-none');
 }
 
-function redirectAlert(message, token) {
+function redirectAlert(data) {
   Swal.fire({
     title: 'Atenção!',
-    text: message,
+    text: data.message,
     icon: 'success',
     confirmButtonText: 'Ok',
     allowOutsideClick: false,
   }).then(result => {
     if (result.isConfirmed) {
-      localStorage.setItem('token', token);
-      window.location.href = '#loginSuccess';
+      localStorage.setItem('token', data.token);
+      localStorage.setItem('user', data.username);
+      window.location.href = 'home.html';
     }
   });
 }

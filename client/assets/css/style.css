@@ -62,3 +62,11 @@
   text-align: center;
   width: 1.25em;
 }
+
+#loading {
+  -webkit-transition: 300ms linear;
+  -moz-transition: 300ms linear;
+  -o-transition: 300ms linear;
+  -ms-transition: 300ms linear;
+  transition: 300ms linear;
+}

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Cards</title>
     <link
       rel="stylesheet"
       href="assets/lib/bootstrap-5.0.2/css/bootstrap.min.css"
@@ -13,7 +13,8 @@
       rel="stylesheet"
       href="assets/lib/bootstrap-icons-1.10.3/bootstrap-icons.css"
     />
-    <link rel="stylesheet" href="assets/css/home.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/cards.css" />
   </head>
   <body>
     <div class="container-fluid">
@@ -176,10 +177,17 @@
         </div>
         <div class="col py-3">
           <div class="container px-4 py-5">
-            <h2 class="pb-2 border-bottom">Suas cartas</h2>
-
+            <h2 class="pb-2 border-bottom">Todas cartas</h2>
+            <div
+              class="spinner-border text-primary mx-auto d-block"
+              role="status"
+              id="loading"
+            >
+              <span class="visually-hidden">Loading...</span>
+            </div>
             <div
               class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5"
+              id="cards"
             >
               <div class="col">
                 <div
@@ -304,5 +312,6 @@
     <script src="assets/lib/axios/axios.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/sidebar.js"></script>
+    <script src="assets/js/cards.js"></script>
   </body>
 </html>

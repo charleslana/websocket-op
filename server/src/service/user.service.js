@@ -16,7 +16,7 @@ const createUser = async (username, password) => {
     minExp: 0,
     maxExp: 1000,
     level: 1,
-    score: 0,
+    score: 100,
   });
 };
 
@@ -56,6 +56,16 @@ const getLoggedUser = async token => {
   return userLogged;
 };
 
+const getUserByProperty = async property => {
+  const userList = users.map(object => ({ ...object }));
+  userList.forEach(u => {
+    delete u['password'];
+    delete u['token'];
+  });
+  userList.sort((a, b) => (a[property] > b[property] ? -1 : 1));
+  return userList;
+};
+
 const existLogin = username => {
   const user = users.find(u => {
     return u.username === username;
@@ -80,4 +90,5 @@ module.exports = {
   getUser,
   loginUser,
   getLoggedUser,
+  getUserByProperty,
 };

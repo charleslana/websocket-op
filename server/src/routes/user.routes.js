@@ -4,6 +4,7 @@ const {
   getUser,
   loginUser,
   getLoggedUser,
+  getUserByProperty,
 } = require('../service/user.service');
 const userRouter = express.Router();
 
@@ -52,6 +53,10 @@ userRouter.get('/details', async (request, response) => {
       message: error.message,
     });
   }
+});
+
+userRouter.get('/ranking', async (request, response) => {
+  response.json(await getUserByProperty(request.query.property));
 });
 
 module.exports = userRouter;

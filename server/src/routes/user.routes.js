@@ -10,7 +10,11 @@ const userRouter = express.Router();
 
 userRouter.post('/', async (request, response) => {
   try {
-    await createUser(request.body.username, request.body.password);
+    await createUser(
+      request.body.username,
+      request.body.password,
+      request.body.passwordConfirmation
+    );
     response.json({
       message: 'Usuário cadastrado com sucesso',
     });

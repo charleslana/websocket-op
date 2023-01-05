@@ -37,6 +37,12 @@ const shop = [
     berry: 25000,
     gold: 1000,
   },
+  {
+    id: 7,
+    character: characters.find(c => c.id === 7),
+    berry: 2500000,
+    gold: 2000000,
+  },
 ];
 
 module.exports = shop;

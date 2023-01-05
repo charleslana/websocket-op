@@ -9,6 +9,15 @@ const getUserCharacter = async token => {
   return userCharacter;
 };
 
+const getUserCharacterById = async (token, id) => {
+  const user = await getLoggedUser(token);
+  const userCharacter = userCharacters.find(u => {
+    return u.userId === user.id && u.character.id === id;
+  });
+  return userCharacter;
+};
+
 module.exports = {
   getUserCharacter,
+  getUserCharacterById,
 };

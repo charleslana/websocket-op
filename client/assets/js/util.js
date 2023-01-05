@@ -37,3 +37,16 @@ instance.interceptors.response.use(
 function numberFormatter(number) {
   return number.toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
 }
+
+function confirmAlert(callback) {
+  Swal.fire({
+    title: 'Deseja confirmar a ação?',
+    showCancelButton: true,
+    confirmButtonText: 'Ok',
+    cancelButtonText: 'Cancelar',
+  }).then(result => {
+    if (result.isConfirmed) {
+      callback();
+    }
+  });
+}

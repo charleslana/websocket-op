@@ -1,6 +1,22 @@
 const users = require('../data/user.data');
 
-const createUser = async (username, password) => {
+const createUser = async (username, password, passwordConfirmation) => {
+  username = username.trim();
+  if (username === '') {
+    throw new Error('Usuário inválido');
+  }
+  if (username.length > 15) {
+    throw new Error('Usuário deve ter no máximo 15 caracteres');
+  }
+  if (!/^[a-zA-ZÀ-ú0-9]+$/i.test(username)) {
+    throw new Error('Usuário deve conter apenas letras e números');
+  }
+  if (password !== passwordConfirmation) {
+    throw new Error('Senhas não coincidem');
+  }
+  if (password.length > 50) {
+    throw new Error('Senha inválida');
+  }
   if (existLogin(username)) {
     throw new Error('Já existe o login');
   }
@@ -66,6 +82,16 @@ const getUserByProperty = async property => {
   return userList;
 };
 
+const updateUserGold = async (id, gold) => {
+  const userIndex = users.findIndex(u => u.id == id);
+  users[userIndex].gold = gold;
+};
+
+const updateUserBerry = async (id, berry) => {
+  const userIndex = users.findIndex(u => u.id == id);
+  users[userIndex].berry = berry;
+};
+
 const existLogin = username => {
   const user = users.find(u => {
     return u.username === username;
@@ -91,4 +117,6 @@ module.exports = {
   loginUser,
   getLoggedUser,
   getUserByProperty,
+  updateUserGold,
+  updateUserBerry,
 };

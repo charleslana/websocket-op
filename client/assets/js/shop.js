@@ -35,7 +35,9 @@ function mountCards(data) {
           }</h2>
           <ul class="d-flex list-unstyled mt-auto">
             <li class="me-auto">
-              <button type="button" class="btn btn-outline-light">Comprar</button>
+              <button type="button" class="btn btn-outline-light" onclick="confirmAlert(() => buyCard(${
+                d.id
+              }))">Comprar</button>
             </li>
             <li class="d-flex align-items-center me-3">
               <small class='text-warning me-2'>O</small>
@@ -60,4 +62,20 @@ function loading() {
 
 function removeLoading() {
   document.getElementById('loading').style.opacity = 0;
+}
+
+function buyCard(id) {
+  instance
+    .get(`/shop/buy?id=${id}`)
+    .then(response => {
+      successAlert(response.data.message);
+    })
+    .catch(error => {
+      if (error.response) {
+        errorAlert(error.response.data.message);
+        return;
+      }
+      errorAlert(error.message);
+    })
+    .finally(() => {});
 }

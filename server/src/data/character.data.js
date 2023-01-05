@@ -19,6 +19,16 @@ const characters = [
     name: 'Portgas D. Ace',
     image: '4',
   },
+  {
+    id: 5,
+    name: 'Shanks',
+    image: '5',
+  },
+  {
+    id: 6,
+    name: 'Buggy',
+    image: '6',
+  },
 ];
 
 module.exports = characters;

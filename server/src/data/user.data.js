@@ -10,6 +10,7 @@ const users = [
     minExp: 0,
     maxExp: 1000,
     level: 1,
+    score: 0,
   },
 ];
 

@@ -21,4 +21,5 @@ function mountUser(data) {
   document.getElementById('minExp').textContent = numberFormatter(data.minExp);
   document.getElementById('maxExp').textContent = numberFormatter(data.maxExp);
   document.getElementById('level').textContent = numberFormatter(data.level);
+  document.getElementById('score').textContent = numberFormatter(data.score);
 }
